@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
+import Auth from '@aws-amplify/auth/lib/Auth';
 
 function App() {
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+        .then(user => console.log({ user }))
+        .catch(error => console.log({ error }))
+  });
   return (
     <div className="App">
       <header className="App-header">
