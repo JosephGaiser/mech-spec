@@ -1,33 +1,41 @@
-import React, {useEffect} from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import { withAuthenticator } from 'aws-amplify-react'
-import Auth from '@aws-amplify/auth/lib/Auth';
+import {API, graphqlOperation} from 'aws-amplify'
+import {withAuthenticator} from 'aws-amplify-react'
+import {listSwitchs} from "./graphql/queries";
 
 function App() {
-  useEffect(() => {
-    Auth.currentAuthenticatedUser()
-        .then(user => console.log({ user }))
-        .catch(error => console.log({ error }))
-  });
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [switches, updateSwitches] = useState([]);
+
+    useEffect(() => {
+        getData().then(r => console.log({r}))
+    }, []);
+
+    async function getData() {
+        try {
+            const switchData = await API.graphql(graphqlOperation(listSwitchs));
+            console.log('data from API: ', switchData);
+            updateSwitches(switchData.data.listSwitchs.items)
+        } catch (err) {
+            console.log('error fetching data..', err)
+        }
+    }
+
+    return (
+        <div>
+            <h1> Mechanical Switches </h1>
+            {
+                switches.map((s, i) => (
+                    <div key={i}>
+                        <h2>{s.name}</h2>
+                        <p>{s.type}</p>
+                        <h4>{s.description}</h4>
+                    </div>
+                ))
+            }
+        </div>
+    );
 }
 
-export default withAuthenticator(App, { includeGreetings: true })
+export default withAuthenticator(App, {includeGreetings: true}
+)
