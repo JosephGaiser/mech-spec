@@ -1,5 +1,12 @@
-type Todo @model {
+type Switch @model {
   id: ID!
   name: String!
   description: String
+  type: SwitchType
+}
+
+enum SwitchType {
+  TACTILE,
+  LINEAR,
+  CLICKY,
 }

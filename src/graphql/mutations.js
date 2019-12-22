@@ -1,36 +1,39 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = `mutation CreateTodo(
-  $input: CreateTodoInput!
-  $condition: ModelTodoConditionInput
+export const createSwitch = `mutation CreateSwitch(
+  $input: CreateSwitchInput!
+  $condition: ModelSwitchConditionInput
 ) {
-  createTodo(input: $input, condition: $condition) {
+  createSwitch(input: $input, condition: $condition) {
     id
     name
     description
+    type
   }
 }
 `;
-export const updateTodo = `mutation UpdateTodo(
-  $input: UpdateTodoInput!
-  $condition: ModelTodoConditionInput
+export const updateSwitch = `mutation UpdateSwitch(
+  $input: UpdateSwitchInput!
+  $condition: ModelSwitchConditionInput
 ) {
-  updateTodo(input: $input, condition: $condition) {
+  updateSwitch(input: $input, condition: $condition) {
     id
     name
     description
+    type
   }
 }
 `;
-export const deleteTodo = `mutation DeleteTodo(
-  $input: DeleteTodoInput!
-  $condition: ModelTodoConditionInput
+export const deleteSwitch = `mutation DeleteSwitch(
+  $input: DeleteSwitchInput!
+  $condition: ModelSwitchConditionInput
 ) {
-  deleteTodo(input: $input, condition: $condition) {
+  deleteSwitch(input: $input, condition: $condition) {
     id
     name
     description
+    type
   }
 }
 `;

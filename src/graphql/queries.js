@@ -1,24 +1,26 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTodo = `query GetTodo($id: ID!) {
-  getTodo(id: $id) {
+export const getSwitch = `query GetSwitch($id: ID!) {
+  getSwitch(id: $id) {
     id
     name
     description
+    type
   }
 }
 `;
-export const listTodos = `query ListTodos(
-  $filter: ModelTodoFilterInput
+export const listSwitchs = `query ListSwitchs(
+  $filter: ModelSwitchFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listSwitchs(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       name
       description
+      type
     }
     nextToken
   }

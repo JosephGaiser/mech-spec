@@ -1,27 +1,30 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTodo = `subscription OnCreateTodo {
-  onCreateTodo {
+export const onCreateSwitch = `subscription OnCreateSwitch {
+  onCreateSwitch {
     id
     name
     description
+    type
   }
 }
 `;
-export const onUpdateTodo = `subscription OnUpdateTodo {
-  onUpdateTodo {
+export const onUpdateSwitch = `subscription OnUpdateSwitch {
+  onUpdateSwitch {
     id
     name
     description
+    type
   }
 }
 `;
-export const onDeleteTodo = `subscription OnDeleteTodo {
-  onDeleteTodo {
+export const onDeleteSwitch = `subscription OnDeleteSwitch {
+  onDeleteSwitch {
     id
     name
     description
+    type
   }
 }
 `;
