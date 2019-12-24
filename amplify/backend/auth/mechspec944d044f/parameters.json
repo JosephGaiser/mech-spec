@@ -1,6 +1,6 @@
 {
     "identityPoolName": "mechspec944d044f_identitypool_944d044f",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "mechsp944d044f",
     "userPoolName": "mechspec944d044f_userpool_944d044f",
     "autoVerifiedAttributes": [
