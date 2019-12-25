@@ -4,6 +4,8 @@ import { API, graphqlOperation } from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react";
 import { listSwitchs } from "./graphql/queries";
 import Switch from "./components/Switch";
+import {CardGroup} from "reactstrap";
+import CardDeck from "reactstrap/es/CardDeck";
 
 function App() {
   const [switches, updateSwitches] = useState([]);
@@ -25,11 +27,13 @@ function App() {
   return (
     <div>
       <h1> Mechanical Switches </h1>
-      {switches.map((s, i) => (
-        <div key={i}>
-          <Switch mySwitch={s} />
-        </div>
-      ))}
+      <CardDeck>
+          {switches.map((s, i) => (
+              <div key={i}>
+                <Switch mySwitch={s} />
+              </div>
+          ))}
+      </CardDeck>
     </div>
   );
 }
