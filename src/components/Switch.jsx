@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Badge
+    CardTitle, CardSubtitle, Badge
 } from 'reactstrap';
 
 class Switch extends Component {

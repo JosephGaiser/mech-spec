@@ -4,7 +4,6 @@ import { API, graphqlOperation } from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react";
 import { listSwitchs } from "./graphql/queries";
 import Switch from "./components/Switch";
-import {CardGroup} from "reactstrap";
 import CardDeck from "reactstrap/es/CardDeck";
 
 function App() {
